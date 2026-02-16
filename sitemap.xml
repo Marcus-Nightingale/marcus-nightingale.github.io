@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://marcus-nightingale.github.io/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://marcus-nightingale.github.io/ISO27001-2022-SOA-Generator/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://marcus-nightingale.github.io/ISO27001-2022-Control-Bento/</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
