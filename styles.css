@@ -41,12 +41,88 @@
 }
 
 .home-grid .home-hero {
-    grid-column: span 8;
-    grid-row: span 2;
+    grid-column: 1 / 9;
+    grid-row: 1;
     gap: 18px;
     border-radius: var(--radius);
     border-top-left-radius: var(--radius-corner);
     border-bottom-left-radius: var(--radius-corner);
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.home-stack {
+    grid-column: 9 / -1;
+    grid-row: 1;
+    display: grid;
+    gap: 18px;
+    align-content: start;
+    align-self: center;
+}
+
+.home-stack .tool-card,
+.home-stack .card-meta {
+    grid-column: auto;
+}
+
+.about-block {
+    display: grid;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.about-block h3 {
+    margin-top: 12px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+}
+
+.about-tagline {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.about-block p {
+    margin: 0;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+
+.about-list {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+}
+
+.about-list li {
+    padding-left: 16px;
+    position: relative;
+}
+
+.about-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--accent);
+}
+
+.about-close {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
 }
 
 .corner-logo {
@@ -76,6 +152,26 @@
     grid-column: span 4;
     border-radius: var(--radius);
     gap: 16px;
+}
+
+.card-meta {
+    grid-column: span 4;
+}
+
+.meta-card-content {
+    display: grid;
+    gap: 14px;
+}
+
+.meta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.meta-links .btn {
+    flex: 1 1 140px;
+    justify-content: center;
 }
 
 .tool-soa {
@@ -373,7 +469,16 @@ body.theme-dark .bento-tile {
         grid-row: auto;
     }
 
+    .home-stack {
+        grid-column: span 12;
+        grid-row: auto;
+    }
+
     .tool-card {
+        grid-column: span 12;
+    }
+
+    .card-meta {
         grid-column: span 12;
     }
 }

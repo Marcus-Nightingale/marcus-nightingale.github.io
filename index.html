@@ -28,56 +28,48 @@
 </a>
 <main class="page" id="content">
     <div class="bento-grid home-grid">
-        <section class="card card-hero home-hero">
+        <section class="card card-hero home-hero" style="border-radius: 56px 0 0 56px;">
             <h1>Marcus Nightingale</h1>
             <p class="lead">
                 Practical ISO 27001 tooling and notes. I focus on clear control language,
                 maintainable evidence, and frictionless audits.
             </p>
-            <div class="hero-details">
-                <div class="meta-block">
-                    <span class="meta-label">Roles</span>
-                    <p class="meta-text">Senior Software Developer · Core Lead · ISMS Lead at Symphony Commerce.</p>
-                </div>
-                <div class="meta-block">
-                    <span class="meta-label">Currently CPD</span>
-                    <ul class="meta-list">
-                        <li>ISO 27001 Lead Implementer (passed)</li>
-                        <li>MSc Software Engineering (in progress)</li>
-                    </ul>
-                </div>
-<!--                <div class="meta-block">-->
-<!--                    <span class="meta-label">Focus</span>-->
-<!--                    <div class="meta-tags">-->
-<!--                        <span class="meta-tag">Compliance</span>-->
-<!--                        <span class="meta-tag">Evidence</span>-->
-<!--                        <span class="meta-tag">Controls</span>-->
-<!--                        <span class="meta-tag">Audit readiness</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="meta-block">-->
-<!--                    <span class="meta-label">Principles</span>-->
-<!--                    <ul class="meta-list">-->
-<!--                        <li>Evidence before policy</li>-->
-<!--                        <li>Clarity over ceremony</li>-->
-<!--                        <li>Small, repeatable controls</li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-            </div>
-            <div class="hero-links">
-                <a class="btn btn-ghost btn-sm" href="https://codepen.io/marcus-nightingale">
-                    <i class="ph-duotone ph-codepen-logo" aria-hidden="true"></i>
-                    CodePen
-                </a>
-                <a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/in/marcus-n-bb4207140/">
-                    <i class="ph-duotone ph-linkedin-logo" aria-hidden="true"></i>
-                    LinkedIn
-                </a>
+            <div class="about-block" id="about" aria-labelledby="about-title">
+                <h2 class="about-tagline" id="about-title">Engineer-led ISO/IEC 27001 implementer turning controls into testable, auditable engineering.</h2>
+
+                <p>
+                    I’m a UK-based software engineer working where backend systems, infrastructure, and ISO/IEC 27001 implementation meet.
+                    I build ISMS tooling alongside product systems so controls live in the same repos, pipelines, and day-to-day workflows that ship software.
+                </p>
+
+                <p>
+                    My work covers compliance automation, CI/CD security, authentication hardening, audit evidence capture, and secure architecture.
+                    I treat controls as engineering constraints: keep them small, repeatable, and measurable — and capture evidence where the work actually happens.
+                </p>
+
+                <h3>Why this site exists</h3>
+                <p>
+                    A lot of ISO guidance is either high-level or template-heavy.
+                    This site is a set of implementation-grade tools and notes designed to reduce documentation friction and help teams produce consistent, reviewable evidence.
+                </p>
+
+                <h3>Focus areas</h3>
+                <ul class="about-list">
+                    <li>ISO/IEC 27001:2022 control intent, interpretation, and applicability</li>
+                    <li>Statement of Applicability creation, maintenance, and export workflows</li>
+                    <li>Evidence capture aligned to engineering delivery and change control</li>
+                    <li>CI/CD security, release governance, and audit-ready logs</li>
+                    <li>Authentication, identity, and access control design</li>
+                    <li>Secure architecture and infrastructure hardening</li>
+                </ul>
+
+                <p class="about-close">These tools exist because I’ve had to make ISO work in production — not just in documents.</p>
             </div>
             <p class="hero-note">Bento mantra: everything fits in its place.</p>
         </section>
 
-        <section class="card tool-card tool-soa" style="border-radius: 0 56px 0  0;">
+        <div class="home-stack">
+            <section class="card tool-card tool-soa" style="border-radius: 0 56px 0 0;">
             <div class="tool-screen">
                 <div class="screen-chrome">
                     <span class="dot"></span>
@@ -111,7 +103,22 @@
             </div>
         </section>
 
-        <section class="card tool-card tool-bento" style="border-radius: 0 0 56px 0;">
+            <section class="card card-meta" style="border-radius: 0 ;">
+                <div class="meta-card-content">
+                    <div class="meta-links">
+                        <a class="btn btn-ghost btn-sm" href="https://codepen.io/marcus-nightingale">
+                            <i class="ph-duotone ph-codepen-logo" aria-hidden="true"></i>
+                            CodePen
+                        </a>
+                        <a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/in/marcus-n-bb4207140/">
+                            <i class="ph-duotone ph-linkedin-logo" aria-hidden="true"></i>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card tool-card tool-bento" style="border-radius: 0 0 56px 0;">
             <div class="tool-screen">
                 <div class="screen-chrome">
                     <span class="dot"></span>
@@ -137,6 +144,8 @@
                 <a class="btn btn-ghost btn-sm" href="https://marcus-nightingale.github.io/ISO27001-2022-Control-Bento/">Open</a>
             </div>
         </section>
+
+        </div>
     </div>
 </main>
 
