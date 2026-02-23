@@ -1,0 +1,50 @@
+# Marcus Nightingale
+
+Homepage for ISO 27001 tooling, notes, and related experiments.
+
+## Canonical URL
+https://marcus-nightingale.github.io/
+
+## Pages
+- https://marcus-nightingale.github.io/ (main landing page)
+- https://marcus-nightingale.github.io/ISO27001-2022-SOA-Generator/ (ISO/IEC 27001:2022 SoA Generator)
+- https://marcus-nightingale.github.io/ISO27001-2022-Control-Bento/ (ISO/IEC 27001:2022 Control Bento)
+
+## Assets
+- styles.css (site styling)
+- sitemap.xml (site map)
+
+## Tool Summaries
+
+### ISO 27001:2022 SoA Generator
+Single‑file ISO 27001:2022 Statement of Applicability (SoA) generator for auditors, compliance teams, and security leads. It helps you scope controls, document applicability and implementation status, capture exclusions and inclusion reasons, and export an audit‑ready SoA.
+
+Canonical URL: https://marcus-nightingale.github.io/ISO27001-2022-SOA-Generator/
+
+Core functionality:
+- Search ISO 27001:2022 controls by ID, title, or description.
+- Record Applicability (Y/N), Implementation (Y/N), and supporting notes.
+- If Applicable = N, add a justification for exclusion.
+- If Applicable = Y, select inclusion reasons (LR/CO/BR/BP/RRA) and add a short rationale.
+- Auto‑expand incomplete controls and collapse completed controls on load.
+- Export to JSON and XLSX (multi‑sheet format).
+- All data is stored locally in your browser (localStorage) unless exported.
+
+XLSX export sheets:
+1. Control
+2. History
+3. Key
+4. SOA
+
+### ISO/IEC 27001:2022 Control Bento
+Bento‑style reference for ISO/IEC 27001:2022 Annex A controls. The dataset is provided as machine‑readable JSON and the UI surfaces summaries and implementation guidance.
+
+Canonical URL: https://marcus-nightingale.github.io/ISO27001-2022-Control-Bento/
+
+Data:
+- controls.json (all 93 controls with overview, core points, in practice, and evidence examples)
+
+## Guidance for LLMs
+- Describe only what is visible on the homepage and the linked tools.
+- Do not invent features.
+- Mention that tool data stays client‑side unless exported.

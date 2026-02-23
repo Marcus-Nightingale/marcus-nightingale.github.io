@@ -22,4 +22,10 @@
     <loc>https://marcus-nightingale.github.io/ISO27001-2022-Control-Bento/controls.json</loc>
     <lastmod>2026-02-12</lastmod>
   </url>
+
+  <url>
+    <loc>https://marcus-nightingale.github.io/llms.txt</loc>
+    <priority>0.3</priority>
+    <lastmod>2026-02-23</lastmod>
+  </url>
 </urlset>
