@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <sitemap>
+    <loc>https://mnightingale.dev/sitemap-main.xml</loc>
+    <lastmod>2026-02-27</lastmod>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://haproxy-log-insights.mnightingale.dev/sitemap.xml</loc>
+    <lastmod>2026-02-27</lastmod>
+  </sitemap>
+
+</sitemapindex>
