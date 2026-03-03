@@ -3,23 +3,23 @@
 Practical ISO 27001 tooling, notes, and related experiments focusing on clear control language, maintainable evidence, and frictionless audits.
 
 ## Canonical URL
-https://marcus-nightingale.github.io/
+https://mnightingale.dev/
 
 ## Pages
-- [Homepage](https://marcus-nightingale.github.io/): Main landing page with engineer-led ISO/IEC 27001 implementation guidance.
-- [ISO/IEC 27001:2022 SoA Generator](https://marcus-nightingale.github.io/ISO27001-2022-SOA-Generator/): Tool for scoping controls and exporting audit-ready SoA.
-- [ISO/IEC 27001:2022 Control Bento](https://marcus-nightingale.github.io/ISO27001-2022-Control-Bento/): Reference for Annex A controls with machine-readable data.
+- [Homepage](https://mnightingale.dev/): Main landing page with engineer-led ISO/IEC 27001 implementation guidance.
+- [ISO/IEC 27001:2022 SoA Generator](https://mnightingale.dev/ISO27001-2022-SOA-Generator/): Tool for scoping controls and exporting audit-ready SoA.
+- [ISO/IEC 27001:2022 Control Bento](https://mnightingale.dev/ISO27001-2022-Control-Bento/): Reference for Annex A controls with machine-readable data.
 
 ## Assets
-- [styles.css](https://marcus-nightingale.github.io/styles.css): Site styling.
-- [sitemap.xml](https://marcus-nightingale.github.io/sitemap.xml): Site map for crawlers.
+- [styles.css](https://mnightingale.dev/styles.css): Site styling.
+- [sitemap.xml](https://mnightingale.dev/sitemap.xml): Site map for crawlers.
 
 ## Tool Summaries
 
 ### ISO 27001:2022 SoA Generator
 Single-file ISO 27001:2022 Statement of Applicability (SoA) generator for auditors, compliance teams, and security leads. It helps you scope controls, document applicability and implementation status, capture exclusions and inclusion reasons, and export an audit-ready SoA.
 
-**Canonical URL:** https://marcus-nightingale.github.io/ISO27001-2022-SOA-Generator/
+**Canonical URL:** https://mnightingale.dev/ISO27001-2022-SOA-Generator/
 
 **Core functionality:**
 - Search ISO 27001:2022 controls by ID, title, or description.
@@ -39,10 +39,10 @@ Single-file ISO 27001:2022 Statement of Applicability (SoA) generator for audito
 ### ISO/IEC 27001:2022 Control Bento
 Bento-style reference for ISO/IEC 27001:2022 Annex A controls. The dataset is provided as machine-readable JSON and the UI surfaces summaries and implementation guidance.
 
-**Canonical URL:** https://marcus-nightingale.github.io/ISO27001-2022-Control-Bento/
+**Canonical URL:** https://mnightingale.dev/ISO27001-2022-Control-Bento/
 
 **Data:**
-- [controls.json](https://marcus-nightingale.github.io/ISO27001-2022-Control-Bento/controls.json): All 93 controls with overview, core points, in practice, and evidence examples.
+- [controls.json](https://mnightingale.dev/ISO27001-2022-Control-Bento/controls.json): All 93 controls with overview, core points, in practice, and evidence examples.
 
 ## Guidance for LLMs
 - Describe only what is visible on the homepage and the linked tools.
