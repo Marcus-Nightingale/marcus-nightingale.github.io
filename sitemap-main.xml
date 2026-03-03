@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://marcus-nightingale.github.io/</loc>
+    <loc>https://mnightingale.dev/</loc>
     <priority>1.0</priority>
     <lastmod>2026-02-23</lastmod>
   </url>
 
   <url>
-    <loc>https://marcus-nightingale.github.io/ISO27001-2022-SOA-Generator/</loc>
+    <loc>https://mnightingale.dev/ISO27001-2022-SOA-Generator/</loc>
     <priority>0.8</priority>
     <lastmod>2026-02-23</lastmod>
   </url>
 
   <url>
-    <loc>https://marcus-nightingale.github.io/ISO27001-2022-Control-Bento/</loc>
+    <loc>https://mnightingale.dev/ISO27001-2022-Control-Bento/</loc>
     <priority>0.8</priority>
     <lastmod>2026-02-23</lastmod>
   </url>
 
   <url>
-    <loc>https://marcus-nightingale.github.io/ISO27001-2022-Control-Bento/controls.json</loc>
+    <loc>https://mnightingale.dev/ISO27001-2022-Control-Bento/controls.json</loc>
     <lastmod>2026-02-12</lastmod>
   </url>
 
   <url>
-    <loc>https://marcus-nightingale.github.io/ISO27001-2022-SOA-Generator/scripts.js</loc>
+    <loc>https://mnightingale.dev/ISO27001-2022-SOA-Generator/scripts.js</loc>
     <lastmod>2026-02-23</lastmod>
   </url>
 
   <url>
-    <loc>https://marcus-nightingale.github.io/llms.txt</loc>
+    <loc>https://mnightingale.dev/llms.txt</loc>
     <priority>0.3</priority>
     <lastmod>2026-02-23</lastmod>
   </url>
