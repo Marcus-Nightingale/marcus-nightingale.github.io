@@ -61,6 +61,14 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
     });
 });
 
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    document.querySelectorAll(".work-item").forEach((item) => {
+        item.addEventListener("pointerenter", () => {
+            if (window.UISound) window.UISound.play("hover");
+        });
+    });
+}
+
 // --- Pinned spotlight: 3 panels, scroll-driven word highlight ---
 const spot = document.querySelector(".spotlight");
 const spotBar = document.getElementById("spot-bar");
