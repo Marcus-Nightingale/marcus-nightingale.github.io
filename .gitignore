@@ -1,1 +1,22 @@
-.idea
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Personal / local-only documents
+Marcus Nightingale — Senior PHP Developer.pdf

@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: Marcus Nightingale
+Location: Stockport, Greater Manchester, UK
+Contact: https://www.linkedin.com/in/marcus-n-bb4207140/
+GitHub: https://github.com/Marcus-Nightingale
+
+/* THANKS */
+Robot mascot direction logic inspired by page-mascot (MIT, nilbuild).
+Interface sounds: uisfx (MIT code, CC0 audio).
+Type: Space Grotesk (OFL).
+
+/* SITE */
+Standards: HTML, CSS, vanilla JavaScript
+Components: mascot.js, app.js, sound.js (esbuild minified via git hook)
+Last update: 2026-09-18
+Language: English

@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Format only the HTML that is part of this commit. Keeping the hook native
+# avoids adding a hook framework or any runtime dependency beyond Prettier.
+set -euo pipefail
+
+prettier="./node_modules/.bin/prettier"
+
+if [[ ! -x "$prettier" ]]; then
+  echo "pre-commit: Prettier is not installed. Run npm install." >&2
+  exit 1
+fi
+
+while IFS= read -r -d '' file; do
+  # If this file has no unstaged changes, update it in the working tree too so
+  # the completed commit leaves the tree clean.
+  if git diff --quiet -- "$file"; then
+    "$prettier" --write "$file"
+    git add -- "$file"
+    continue
+  fi
+
+  # Do not accidentally stage a developer's unstaged work. Format the staged
+  # version in a temporary file and replace only the index entry instead.
+  temp_file="$(mktemp)"
+  trap 'rm -f "$temp_file"' EXIT
+  git show ":$file" > "$temp_file"
+  "$prettier" --parser html --write "$temp_file"
+
+  mode="$(git ls-files -s -- "$file" | awk '{print $1}')"
+  object="$(git hash-object -w "$temp_file")"
+  git update-index --add --cacheinfo "$mode,$object,$file"
+  rm -f "$temp_file"
+  trap - EXIT
+    echo "pre-commit: formatted staged copy of $file (unstaged edits preserved)."
+done < <(git diff --cached --name-only --diff-filter=ACMR -z -- '*.html' '*.htm')
+
+# Rebuild minified CSS/JS when sources are staged, so index.html (which loads
+# the .min files) never drifts out of sync. Requires esbuild (npm install).
+if git diff --cached --name-only --diff-filter=ACMR -- 'assets/js/*.js' 'assets/css/*.css' ':!*.min.js' ':!*.min.css' | grep -q .; then
+  if [[ ! -x "./node_modules/.bin/esbuild" ]]; then
+    echo "pre-commit: esbuild is not installed. Run npm install." >&2
+    exit 1
+  fi
+  npm run --silent build
+  git add -- assets/js/mascot.min.js assets/js/app.min.js assets/js/sound.min.js assets/css/styles.min.css
+  echo "pre-commit: rebuilt minified assets."
+fi

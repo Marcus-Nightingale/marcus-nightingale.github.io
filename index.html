@@ -1,338 +1,184 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Marcus Nightingale | ISO 27001 Implementation & Tools</title>
-    <meta name="description" content="Engineer-led ISO/IEC 27001 implementation. Practical ISMS tools including an Annex A SoA Generator and Control Bento reference. Turning controls into testable engineering."/>
-    <meta name="keywords" content="ISO 27001, ISO 27001:2022, ISMS, Statement of Applicability, SoA Generator, Annex A controls, compliance automation, information security engineering"/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="author" content="Marcus Nightingale"/>
-    <link rel="canonical" href="https://mnightingale.dev/"/>
-    
-    <!-- GEO Tags -->
-    <meta name="geo.region" content="GB"/>
-    <meta name="geo.placename" content="United Kingdom"/>
-
-    <!-- OpenGraph -->
-    <meta property="og:title" content="Marcus Nightingale | ISO 27001 Implementation & Tools"/>
-    <meta property="og:description" content="Engineer-led ISO/IEC 27001 implementation. Practical ISMS tools including an Annex A SoA Generator and Control Bento reference."/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://mnightingale.dev/"/>
-    <meta property="og:image" content="https://mnightingale.dev/favicon.svg"/>
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Marcus Nightingale | ISO 27001 Implementation & Tools"/>
-    <meta name="twitter:description" content="Practical ISO 27001 tools and notes for engineers and compliance teams."/>
-
-    <!-- JSON-LD for AEO/SEO -->
-    <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Marcus Nightingale",
-        "url": "https://mnightingale.dev/",
-        "jobTitle": "Software Engineer & ISO 27001 Implementer",
-        "description": "Engineer-led ISO/IEC 27001 implementer turning controls into testable, auditable engineering.",
-        "knowsAbout": ["ISO/IEC 27001", "Information Security", "Software Engineering", "Compliance Automation"],
-        "sameAs": [
-          "https://codepen.io/marcus-nightingale",
-          "https://www.linkedin.com/in/marcus-n-bb4207140/"
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "SoA Generator",
-        "description": "Search controls, capture applicability, export XLSX.",
-        "url": "https://mnightingale.dev/ISO27001-2022-SOA-Generator/",
-        "operatingSystem": "Web",
-        "applicationCategory": "BusinessApplication",
-        "author": {
-          "@type": "Person",
-          "name": "Marcus Nightingale"
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Control Bento",
-        "description": "A compact view of Annex A controls with quick context.",
-        "url": "https://mnightingale.dev/ISO27001-2022-Control-Bento/",
-        "operatingSystem": "Web",
-        "applicationCategory": "ReferenceApplication",
-        "author": {
-          "@type": "Person",
-          "name": "Marcus Nightingale"
-        }
-      }
-    ]
-    </script>
-    <meta name="theme-color" content="#1f6f78"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-    <link rel="shortcut icon" href="favicon.svg"/>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css"/>
-    <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-<a class="corner-logo" href="#content" aria-label="Marcus Nightingale home">
-    <svg viewBox="0 0 64 64" role="presentation" focusable="false">
-        <rect x="10" y="10" width="44" height="44" rx="10" fill="none" stroke="currentColor" stroke-width="3"/>
-        <rect x="18" y="18" width="14" height="14" rx="4" fill="currentColor"/>
-        <rect x="34" y="18" width="12" height="14" rx="4" fill="currentColor" opacity="0.85"/>
-        <rect x="18" y="34" width="28" height="12" rx="4" fill="currentColor" opacity="0.7"/>
-    </svg>
-</a>
-<main class="page" id="content">
-    <div class="bento-grid home-grid" data-bento-grid>
-        <section class="card card-hero home-hero">
-            <h1>Marcus Nightingale</h1>
-            <p class="lead">
-                Practical ISO 27001 tooling and notes. I focus on clear control language,
-                maintainable evidence, and frictionless audits.
-            </p>
-            <div class="about-block" id="about" aria-labelledby="about-title">
-                <h2 class="about-tagline" id="about-title">Engineer-led ISO/IEC 27001 implementer turning controls into testable, auditable engineering.</h2>
-
-                <p>
-                    I’m a UK-based software engineer working where backend systems, infrastructure, and ISO/IEC 27001 implementation meet.
-                    I build ISMS tooling alongside product systems so controls live in the same repos, pipelines, and day-to-day workflows that ship software.
-                </p>
-
-                <p>
-                    My work covers compliance automation, CI/CD security, authentication hardening, audit evidence capture, and secure architecture.
-                    I treat controls as engineering constraints: keep them small, repeatable, and measurable — and capture evidence where the work actually happens.
-                </p>
-
-                <h3>Why this site exists</h3>
-                <p>
-                    A lot of ISO guidance is either high-level or template-heavy.
-                    This site is a set of implementation-grade tools and notes designed to reduce documentation friction and help teams produce consistent, reviewable evidence.
-                </p>
-
-                <h3>Focus areas</h3>
-                <ul class="about-list">
-                    <li>ISO/IEC 27001:2022 control intent, interpretation, and applicability</li>
-                    <li>Statement of Applicability creation, maintenance, and export workflows</li>
-                    <li>Evidence capture aligned to engineering delivery and change control</li>
-                    <li>CI/CD security, release governance, and audit-ready logs</li>
-                    <li>Authentication, identity, and access control design</li>
-                    <li>Secure architecture and infrastructure hardening</li>
-                </ul>
-
-                <p class="about-close">These tools exist because I’ve had to make ISO work in production — not just in documents.</p>
-            </div>
-            <p class="hero-note">Bento mantra: everything fits in its place.</p>
-        </section>
-
-        <div class="home-stack" id="tools">
-            <section class="card tool-card tool-soa">
-                <div class="tool-screen">
-                    <div class="screen-chrome">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="screen-label">SoA Generator</span>
-                    </div>
-                    <div class="preview soa-preview">
-                        <div class="preview-row">
-                            <span class="preview-chip">A.5.23</span>
-                            <span class="preview-pill">Applicable</span>
-                        </div>
-                        <div class="preview-search"></div>
-                        <div class="preview-lines">
-                            <span class="preview-line wide"></span>
-                            <span class="preview-line"></span>
-                            <span class="preview-line"></span>
-                        </div>
-                        <div class="preview-stats">
-                            <span class="stat-pill">Total 93</span>
-                            <span class="stat-pill">Impl 58</span>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Marcus Nightingale — Senior PHP Developer & ISO 27001 Lead Implementor</title>
+        <meta name="description" content="Marcus Nightingale is a senior PHP developer in the UK with 10+ years building high-throughput web platforms. ISO 27001 Lead Implementor and indie game developer (Asteroid Mining Empire on Steam)." />
+        <link rel="canonical" href="https://mnightingale.dev/" />
+        <meta name="theme-color" content="#f8f8f8" />
+        <meta name="author" content="Marcus Nightingale" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="mnightingale.dev" />
+        <meta property="og:title" content="Marcus Nightingale — Senior PHP Developer & ISO 27001 Lead Implementor" />
+        <meta property="og:description" content="Senior PHP developer in the UK. 10+ years of high-throughput platforms, ISO 27001 security work, and indie games on Steam." />
+        <meta property="og:url" content="https://mnightingale.dev/" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Marcus Nightingale — Senior PHP Developer & ISO 27001 Lead Implementor" />
+        <meta name="twitter:description" content="Senior PHP developer in the UK. High-throughput platforms, ISO 27001 security work, and indie games on Steam." />
+        <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+        <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Marcus Nightingale",
+                "url": "https://mnightingale.dev/",
+                "jobTitle": "Senior PHP Developer",
+                "address": { "@type": "PostalAddress", "addressLocality": "Stockport", "addressRegion": "Greater Manchester", "addressCountry": "GB" },
+                "knowsAbout": ["PHP", "Laravel", "MySQL", "Redis", "Elasticsearch", "ISO/IEC 27001", "Game Development"],
+                "sameAs": ["https://github.com/Marcus-Nightingale", "https://www.linkedin.com/in/marcus-n-bb4207140/", "https://codepen.io/marcus-nightingale", "https://nightingalegames.co.uk"]
+            }
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/css/styles.min.css" />
+    </head>
+    <body>
+        <header class="nav">
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+            </nav>
+            <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Toggle interface sounds" aria-pressed="true">
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M11 5 6 9H2v6h4l5 4V5z"></path>
+                    <path d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+                </svg>
+                <svg class="sound-icon-off" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M11 5 6 9H2v6h4l5 4V5z"></path>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+            </button>
+        </header>
+        <div class="intro-flow">
+            <canvas class="intro-ascii" id="intro-ascii" aria-hidden="true"></canvas>
+            <main class="hero" id="top">
+                <div class="hero-mascot-slot" id="mascot-slot" aria-hidden="true"></div>
+                <button class="mascot" id="mascot" type="button" aria-label="Boop the robot mascot">
+                    <span class="mascot-frame" id="mascot-frame" aria-hidden="true"></span>
+                </button>
+                <h1 class="hero-title">Marcus Nightingale</h1>
+                <p class="hero-sub">Senior PHP developer in the UK · 10+ years building high-throughput web platforms · ISO 27001 Lead Implementor · Game dev · Currently open to opportunities.</p>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" href="#work">See my work</a>
+                    <a class="btn" href="https://nightingalegames.co.uk">Nightingale Games</a>
+                </div>
+            </main>
+            <section class="spotlight" id="about">
+                <div class="spot-inner">
+                    <div class="spot-content">
+                        <p class="spot-kicker">About</p>
+                        <h2 class="spot-head">A developer who'd rather ship solid software than orchestrate process.</h2>
+                        <div class="spot-progress"><div id="spot-bar"></div></div>
+                        <div class="spot-stage">
+                            <div class="spot-panel" data-panel="0">
+                                <div class="spot-badge">01/03</div>
+                                <p class="spot-text" data-words>Ten plus years building high-throughput PHP and Laravel platforms that stay up under real production pressure.</p>
+                            </div>
+                            <div class="spot-panel" data-panel="1">
+                                <div class="spot-badge">02/03</div>
+                                <p class="spot-text" data-words>Designed and built an ISO 27001 audit platform tested at sixty thousand requests per second with no data loss.</p>
+                            </div>
+                            <div class="spot-panel" data-panel="2">
+                                <div class="spot-badge">03/03</div>
+                                <p class="spot-text" data-words>Led ISO 27001 certification with zero non-conformities, and ship indie games on Steam under Nightingale Games.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="tool-meta">
-                    <div>
-                        <h3>SoA Generator</h3>
-                        <p class="hint">Search controls, capture applicability, export XLSX.</p>
-                    </div>
-                    <a class="btn btn-ghost btn-sm" href="https://mnightingale.dev/ISO27001-2022-SOA-Generator/" rel="related" title="Open ISO/IEC 27001:2022 Statement of Applicability Generator">Open SoA Generator</a>
-                </div>
-            </section>
-
-            <section class="card card-meta" id="links">
-                <div class="meta-card-content">
-                    <div class="meta-links">
-                        <a class="btn btn-ghost btn-sm" href="https://codepen.io/marcus-nightingale" rel="noopener noreferrer">
-                            <i class="ph-duotone ph-codepen-logo" aria-hidden="true"></i>
-                            CodePen
-                        </a>
-                        <a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/in/marcus-n-bb4207140/" rel="noopener noreferrer">
-                            <i class="ph-duotone ph-linkedin-logo" aria-hidden="true"></i>
-                            LinkedIn
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="card tool-card tool-bento">
-                <div class="tool-screen">
-                    <div class="screen-chrome">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="screen-label">Control Bento</span>
-                    </div>
-                    <div class="preview bento-preview">
-                        <span class="bento-tile teal wide"></span>
-                        <span class="bento-tile sun"></span>
-                        <span class="bento-tile clay tall"></span>
-                        <span class="bento-tile"></span>
-                        <span class="bento-tile wide"></span>
-                        <span class="bento-tile teal"></span>
-                        <span class="bento-tile sun wide"></span>
-                    </div>
-                </div>
-                <div class="tool-meta">
-                    <div>
-                        <h3>Control Bento</h3>
-                        <p class="hint">A compact view of Annex A controls with quick context.</p>
-                    </div>
-                    <a class="btn btn-ghost btn-sm" href="https://mnightingale.dev/ISO27001-2022-Control-Bento/" rel="related" title="Open ISO/IEC 27001:2022 Control Bento reference tool">Open Control Bento</a>
                 </div>
             </section>
         </div>
-    </div>
-</main>
-
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2026 Marcus Nightingale. Practical ISO 27001 tooling for engineers.</p>
-    </div>
-</footer>
-
-<button class="theme-fab" id="btnTheme" type="button" aria-pressed="false" aria-label="Switch to dark theme"
-        title="Switch to dark theme">
-    <i class="ph-duotone ph-sun-horizon" aria-hidden="true"></i>
-    <i class="ph-duotone ph-cloud-moon" aria-hidden="true"></i>
-    <span class="sr-only">Toggle theme</span>
-</button>
-
-<a class="coffee-fab" href="https://buymeacoffee.com/marcus.nightingale" target="_blank"
-   rel="noopener noreferrer" aria-label="Buy me a pizza" title="Buy me a pizza">
-    <i class="ph-duotone ph-pizza" aria-hidden="true"></i>
-</a>
-
-<button class="back-to-top" id="btnTop" type="button" aria-label="Scroll to top" title="Scroll to top">
-    <i class="ph-duotone ph-arrow-up" aria-hidden="true"></i>
-</button>
-
-<script defer src="https://cloud.umami.is/script.js" data-website-id="ed8df59c-e076-4528-86be-d8a1728edc47"></script>
-
-<script src="https://mnightingale.dev/bento-corners/bento-corners.js" defer></script>
-
-<script>
-    const THEME_KEY = "soa_theme";
-    const themeBtn = document.getElementById("btnTheme");
-    const topBtn = document.getElementById("btnTop");
-
-    function setTheme(theme) {
-        const isDark = theme === "dark";
-        document.body.classList.toggle("theme-dark", isDark);
-        if (themeBtn) {
-            themeBtn.setAttribute("aria-pressed", isDark ? "true" : "false");
-            themeBtn.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
-            themeBtn.setAttribute("title", isDark ? "Switch to light theme" : "Switch to dark theme");
-        }
-        localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
-    }
-
-    function initTheme() {
-        const saved = localStorage.getItem(THEME_KEY);
-        if (saved === "dark" || saved === "light") {
-            setTheme(saved);
-            return;
-        }
-        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-        setTheme(prefersDark ? "dark" : "light");
-    }
-
-    function updateBackToTop() {
-        if (!topBtn) return;
-        topBtn.classList.toggle("is-visible", window.scrollY > 320);
-    }
-
-    const cornerLogo = document.querySelector(".corner-logo");
-    const mobileLogoQuery = window.matchMedia("(max-width: 720px)");
-    let lastLogoScroll = window.scrollY;
-    let logoRaf = null;
-
-    function setLogoState(state) {
-        if (!cornerLogo) return;
-        cornerLogo.classList.remove("is-hiding", "is-showing");
-        if (state === "hidden") {
-            cornerLogo.classList.add("is-hiding");
-            cornerLogo.classList.add("is-hidden");
-        } else {
-            cornerLogo.classList.add("is-showing");
-            cornerLogo.classList.remove("is-hidden");
-        }
-    }
-
-    function updateLogoVisibility() {
-        if (!cornerLogo) return;
-        if (!mobileLogoQuery.matches) {
-            cornerLogo.classList.remove("is-hiding", "is-showing", "is-hidden");
-            lastLogoScroll = window.scrollY;
-            return;
-        }
-        const current = window.scrollY;
-        const delta = current - lastLogoScroll;
-        if (current <= 8) {
-            setLogoState("shown");
-        } else if (delta > 4) {
-            setLogoState("hidden");
-        } else if (delta < -4) {
-            setLogoState("shown");
-        }
-        lastLogoScroll = current;
-    }
-
-    function onLogoScroll() {
-        if (logoRaf) return;
-        logoRaf = window.requestAnimationFrame(() => {
-            logoRaf = null;
-            updateLogoVisibility();
-        });
-    }
-
-    if (themeBtn) {
-        themeBtn.addEventListener("click", () => {
-            const isDark = document.body.classList.contains("theme-dark");
-            setTheme(isDark ? "light" : "dark");
-        });
-    }
-
-    if (topBtn) {
-        topBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    }
-
-    window.addEventListener("scroll", updateBackToTop, { passive: true });
-    window.addEventListener("scroll", onLogoScroll, { passive: true });
-    window.addEventListener("resize", updateLogoVisibility);
-
-    initTheme();
-    updateBackToTop();
-    updateLogoVisibility();
-</script>
-</body>
+        <section class="wrap" id="work">
+            <h2 class="reveal">Things I've made</h2>
+            <div class="work-list">
+                <a class="work-item work-featured reveal" href="https://store.steampowered.com/app/4516220/Asteroid_Mining_Empire/">
+                    <span class="work-index">01</span>
+                    <span class="work-body">
+                        <span class="work-title">Asteroid Mining Empire</span>
+                        <span class="work-text">A fast-paced pixel-art space mining game: blast asteroids, reinvest in ships and drones, survive pirate raids and black-hole anomalies, and push into rebirth progression. Released April 2026 on Windows, macOS and Linux with 25 Steam achievements.</span>
+                        <span class="work-tags">
+                            <span class="tag tag-game">game</span>
+                            <span class="tag tag-steam">steam</span>
+                            <span class="tag tag-pixel">pixel-art</span>
+                        </span>
+                    </span>
+                    <span class="work-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="work-item reveal" href="https://mnightingale.dev/ISO27001-2022-SOA-Generator/">
+                    <span class="work-index">02</span>
+                    <span class="work-body">
+                        <span class="work-title">SoA Generator</span>
+                        <span class="work-text">A single-file Statement of Applicability builder for ISO 27001:2022. Runs entirely client-side with localStorage, instant search across all controls, and XLSX/JSON export.</span>
+                        <span class="work-tags">
+                            <span class="tag tag-security">security</span>
+                            <span class="tag tag-iso">iso 27001</span>
+                            <span class="tag tag-tool">tool</span>
+                        </span>
+                    </span>
+                    <span class="work-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="work-item reveal" href="https://mnightingale.dev/ISO27001-2022-Control-Bento/">
+                    <span class="work-index">03</span>
+                    <span class="work-body">
+                        <span class="work-title">Control Bento</span>
+                        <span class="work-text">All 93 Annex A controls of ISO 27001:2022 as an interactive bento grid, grouped by control type with instant search.</span>
+                        <span class="work-tags">
+                            <span class="tag tag-security">security</span>
+                            <span class="tag tag-iso">iso 27001</span>
+                            <span class="tag tag-ref">reference</span>
+                        </span>
+                    </span>
+                    <span class="work-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="work-item reveal" href="https://octopus-exchange-bvj4q.ondigitalocean.app">
+                    <span class="work-index">04</span>
+                    <span class="work-body">
+                        <span class="work-title">EUR Exchange Rates</span>
+                        <span class="work-text">Live Euro exchange rates against 165 world currencies with a converter, historical charts and JSON/CSV export.</span>
+                        <span class="work-tags">
+                            <span class="tag tag-web">web</span>
+                            <span class="tag tag-data">data</span>
+                            <span class="tag tag-tool">tool</span>
+                        </span>
+                    </span>
+                    <span class="work-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="work-item reveal" href="https://codepen.io/marcus-nightingale">
+                    <span class="work-index">05</span>
+                    <span class="work-body">
+                        <span class="work-title">CodePen sketches</span>
+                        <span class="work-text">Small front-end experiments and toys.</span>
+                        <span class="work-tags">
+                            <span class="tag tag-frontend">frontend</span>
+                            <span class="tag tag-exp">experiments</span>
+                        </span>
+                    </span>
+                    <span class="work-arrow" aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-inner">
+                <p class="footer-note">© 2026 Marcus Nightingale · Built by hand, booped by robot.</p>
+                <p class="footer-links">
+                    <a href="https://github.com/Marcus-Nightingale">GitHub</a>
+                    <a href="https://www.linkedin.com/in/marcus-n-bb4207140/">LinkedIn</a>
+                    <a href="https://codepen.io/marcus-nightingale">CodePen</a>
+                    <a href="https://nightingalegames.co.uk">Nightingale Games</a>
+                </p>
+            </div>
+        </footer>
+        <script src="./assets/js/mascot.min.js" defer></script>
+        <script src="./assets/js/app.min.js" defer></script>
+        <script src="./assets/js/sound.min.js" defer></script>
+        <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m18 15-6-6-6 6"></path>
+            </svg>
+        </button>
+    </body>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ed8df59c-e076-4528-86be-d8a1728edc47"></script>
 </html>

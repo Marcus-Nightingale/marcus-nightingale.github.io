@@ -1,0 +1,17 @@
+{
+    "name": "mnightingale.dev",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+        "format": "prettier --write \"**/*.html\"",
+        "format:check": "prettier --check \"**/*.html\"",
+        "build": "esbuild assets/js/mascot.js --minify --outfile=assets/js/mascot.min.js && esbuild assets/js/app.js --minify --outfile=assets/js/app.min.js && esbuild assets/js/sound.js --bundle --minify --outfile=assets/js/sound.min.js && esbuild assets/css/styles.css --minify --outfile=assets/css/styles.min.css"
+    },
+    "devDependencies": {
+        "esbuild": "^0.25.0",
+        "prettier": "^3.6.2"
+    },
+    "dependencies": {
+        "uisfx": "^0.4.0"
+    }
+}
