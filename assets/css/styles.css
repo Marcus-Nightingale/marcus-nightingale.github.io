@@ -1,11 +1,23 @@
 :root {
-    color-scheme: light dark;
+    color-scheme: light;
     --bg: #eef0f2;
     --card: #ffffff;
     --ink: #1a1a1a;
     --muted: #6b7280;
     --line: #e5e7eb;
+    --glass: rgba(255, 255, 255, 0.6);
+    --glass-line: rgba(229, 231, 235, 0.8);
     --display: "Titan One", "Space Grotesk", system-ui, -apple-system, sans-serif;
+}
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #10151b;
+    --card: #1a222c;
+    --ink: #f2f5f7;
+    --muted: #9aa7b4;
+    --line: #2a3542;
+    --glass: rgba(26, 34, 44, 0.6);
+    --glass-line: rgba(42, 53, 66, 0.8);
 }
 * {
     box-sizing: border-box;
@@ -40,14 +52,15 @@ body {
     pointer-events: none;
 }
 .nav-links,
-.sound-toggle {
+.sound-toggle,
+.theme-toggle {
     pointer-events: auto;
 }
 .nav-links {
     display: flex;
     gap: 4px;
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(229, 231, 235, 0.8);
+    background: var(--glass);
+    border: 1px solid var(--glass-line);
     border-radius: 999px;
     padding: 4px;
     backdrop-filter: blur(12px) saturate(1.4);
@@ -73,8 +86,8 @@ body {
     display: grid;
     place-items: center;
     color: var(--muted);
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(229, 231, 235, 0.8);
+    background: var(--glass);
+    border: 1px solid var(--glass-line);
     border-radius: 50%;
     backdrop-filter: blur(12px) saturate(1.4);
     -webkit-backdrop-filter: blur(12px) saturate(1.4);
@@ -92,6 +105,31 @@ body {
 .sound-toggle.is-muted .sound-icon-off {
     display: block;
 }
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    background: var(--glass);
+    border: 1px solid var(--glass-line);
+    border-radius: 50%;
+    backdrop-filter: blur(12px) saturate(1.4);
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    cursor: pointer;
+}
+.theme-toggle:hover {
+    color: var(--ink);
+}
+.theme-toggle .theme-icon-sun {
+    display: none;
+}
+html[data-theme="dark"] .theme-toggle .theme-icon-moon {
+    display: none;
+}
+html[data-theme="dark"] .theme-toggle .theme-icon-sun {
+    display: block;
+}
 .to-top {
     position: fixed;
     right: 24px;
@@ -102,8 +140,8 @@ body {
     display: grid;
     place-items: center;
     color: var(--ink);
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(229, 231, 235, 0.8);
+    background: var(--glass);
+    border: 1px solid var(--glass-line);
     border-radius: 50%;
     backdrop-filter: blur(12px) saturate(1.4);
     -webkit-backdrop-filter: blur(12px) saturate(1.4);
@@ -148,7 +186,7 @@ body {
     z-index: 1;
     height: 340vh;
     background: transparent;
-    color: #17212b;
+    color: var(--ink);
 }
 .spot-inner {
     position: sticky;
@@ -177,12 +215,12 @@ body {
 .spot-head {
     margin: 0 0 32px;
     font-size: clamp(1.4rem, 2.4vw, 2rem);
-    color: rgba(41, 52, 64, 0.68);
+    color: var(--muted);
     max-width: 28ch;
 }
 .spot-progress {
     height: 2px;
-    background: rgba(43, 57, 69, 0.14);
+    background: var(--line);
     border-radius: 2px;
     margin-bottom: 32px;
     overflow: hidden;
@@ -232,6 +270,12 @@ body {
     transition:
         opacity 120ms linear,
         text-shadow 120ms linear;
+}
+html[data-theme="dark"] .spot-text .w {
+    opacity: 0.28;
+}
+html[data-theme="dark"] .spot-text .w.lit {
+    opacity: 1;
 }
 .spot-text .w.lit {
     opacity: 1;
@@ -467,6 +511,61 @@ body {
     background: #ffedd5;
     border-color: #fdba74;
     color: #9a3412;
+}
+html[data-theme="dark"] .tag-game {
+    background: #2e1065;
+    border-color: #7c3aed;
+    color: #d8b4fe;
+}
+html[data-theme="dark"] .tag-steam {
+    background: #172554;
+    border-color: #3b82f6;
+    color: #bfdbfe;
+}
+html[data-theme="dark"] .tag-pixel {
+    background: #4a044e;
+    border-color: #d946ef;
+    color: #f5d0fe;
+}
+html[data-theme="dark"] .tag-security {
+    background: #052e16;
+    border-color: #22c55e;
+    color: #bbf7d0;
+}
+html[data-theme="dark"] .tag-iso {
+    background: #042f2e;
+    border-color: #14b8a6;
+    color: #99f6e4;
+}
+html[data-theme="dark"] .tag-tool {
+    background: #451a03;
+    border-color: #f59e0b;
+    color: #fde68a;
+}
+html[data-theme="dark"] .tag-ref {
+    background: #083344;
+    border-color: #06b6d4;
+    color: #a5f3fc;
+}
+html[data-theme="dark"] .tag-web {
+    background: #0c2f4a;
+    border-color: #0ea5e9;
+    color: #bae6fd;
+}
+html[data-theme="dark"] .tag-data {
+    background: #1e1b4b;
+    border-color: #6366f1;
+    color: #c7d2fe;
+}
+html[data-theme="dark"] .tag-frontend {
+    background: #500724;
+    border-color: #ec4899;
+    color: #fbcfe8;
+}
+html[data-theme="dark"] .tag-exp {
+    background: #431407;
+    border-color: #f97316;
+    color: #fed7aa;
 }
 .card-link {
     display: inline-block;

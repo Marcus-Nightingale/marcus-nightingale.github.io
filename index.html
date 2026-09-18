@@ -6,7 +6,18 @@
         <title>Marcus Nightingale — Senior PHP Developer & ISO 27001 Lead Implementor</title>
         <meta name="description" content="Marcus Nightingale is a senior PHP developer in the UK with 10+ years building high-throughput web platforms. ISO 27001 Lead Implementor and indie game developer (Asteroid Mining Empire on Steam)." />
         <link rel="canonical" href="https://mnightingale.dev/" />
-        <meta name="theme-color" content="#f8f8f8" />
+        <meta name="theme-color" content="#eef0f2" id="theme-color" />
+        <script>
+            try {
+                var savedTheme = localStorage.getItem("mnightingale:theme");
+                if (!savedTheme) {
+                    savedTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.dataset.theme = savedTheme;
+            } catch (e) {
+                document.documentElement.dataset.theme = "light";
+            }
+        </script>
         <meta name="author" content="Marcus Nightingale" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="mnightingale.dev" />
@@ -41,6 +52,15 @@
                 <a href="#about">About</a>
                 <a href="#work">Work</a>
             </nav>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"></path>
+                </svg>
+                <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+                </svg>
+            </button>
             <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Toggle interface sounds" aria-pressed="true">
                 <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M11 5 6 9H2v6h4l5 4V5z"></path>

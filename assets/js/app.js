@@ -69,6 +69,29 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     });
 }
 
+const themeToggle = document.getElementById("theme-toggle");
+const themeColor = document.getElementById("theme-color");
+
+function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    try {
+        window.localStorage.setItem("mnightingale:theme", theme);
+    } catch {
+        // Private browsing etc: theme just won't persist.
+    }
+    if (themeToggle) themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+    if (themeColor) themeColor.setAttribute("content", theme === "dark" ? "#10151b" : "#eef0f2");
+}
+
+if (themeToggle) {
+    themeToggle.setAttribute("aria-pressed", String(document.documentElement.dataset.theme === "dark"));
+    themeToggle.addEventListener("click", () => {
+        const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        applyTheme(next);
+        if (window.UISound) window.UISound.play(next === "dark" ? "toggle-off" : "toggle-on");
+    });
+}
+
 // --- Pinned spotlight: 3 panels, scroll-driven word highlight ---
 const spot = document.querySelector(".spotlight");
 const spotBar = document.getElementById("spot-bar");
@@ -210,9 +233,10 @@ if (introAscii && introFlow) {
                 const placement = Math.min(heroAmount * heroShape + aboutAmount * aboutShape, 1);
                 const blueSplash = Math.max(0, Math.sin(nx * 8.5 - time * 0.34 + ny * 2.2) * 0.5 + Math.sin(ny * 11 + time * 0.25) * 0.3 - 0.12);
                 const mix = Math.min(blueSplash * 3.2 + (pointer.active ? Math.exp(-Math.hypot(x - pointer.x, y - pointer.y) / 150) * 0.7 : 0), 1);
-                const red = Math.round(91 - mix * 54);
-                const green = Math.round(101 + mix * 75);
-                const blue = Math.round(111 + mix * 136);
+                const dark = document.documentElement.dataset.theme === "dark";
+                const red = Math.round((dark ? 122 : 91) - mix * (dark ? 62 : 54));
+                const green = Math.round((dark ? 142 : 101) + mix * (dark ? 78 : 75));
+                const blue = Math.round((dark ? 168 : 111) + mix * (dark ? 87 : 136));
                 ctx.fillStyle = `rgba(${red}, ${green}, ${blue}, ${edgeFade * placement * (0.11 + normalized * 0.34)})`;
                 ctx.fillText(glyph, x, y);
             }
