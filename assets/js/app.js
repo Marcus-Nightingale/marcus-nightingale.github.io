@@ -176,7 +176,7 @@ if (introAscii && introFlow) {
         const scrollable = Math.max(flowRect.height - window.innerHeight, 1);
         const flowProgress = Math.min(Math.max(-flowRect.top / scrollable, 0), 1);
         const heroAmount = 1 - smoothstep(0.12, 0.31, flowProgress);
-        const aboutAmount = smoothstep(0.12, 0.3, flowProgress) * (1 - smoothstep(0.9, 1, flowProgress));
+        const aboutAmount = smoothstep(0.12, 0.3, flowProgress);
 
         const cell = width < 640 ? 15 : 17;
         const fontSize = cell * 0.82;
