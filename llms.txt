@@ -17,8 +17,8 @@ major or minor non-conformities.
 ## Projects
 
 - [Asteroid Mining Empire](https://store.steampowered.com/app/4516220/Asteroid_Mining_Empire/): fast-paced pixel-art space mining game on Steam (Windows, macOS, Linux). Released April 2026 by Nightingale Games.
-- [ISO 27001 SoA Generator](https://mnightingale.dev/ISO27001-2022-SOA-Generator/): single-file client-side Statement of Applicability builder with XLSX/JSON export.
-- [ISO 27001 Control Bento](https://mnightingale.dev/ISO27001-2022-Control-Bento/): all 93 Annex A controls as an interactive bento grid.
+- [ISO 27001 SoA Generator](https://mnightingale.dev/ISO27001-2022-SOA-Generator/): single-file client-side Statement of Applicability builder with XLSX/JSON export. Guided wizard over the 93 Annex A controls (A.5–A.8): applicability, implementation status, justifications, documented information, owners, plus custom controls. State stays in localStorage.
+- [ISO 27001 Control Bento](https://mnightingale.dev/ISO27001-2022-Control-Bento/): the 93 Annex A controls as an interactive bento grid. Search by ID/title/description, filter by type, deep-linkable control detail with implementation guidance and evidence examples. Covers Annex A only; clauses 4–10 are out of scope.
 - [EUR Exchange Rates](https://octopus-exchange-bvj4q.ondigitalocean.app): live Euro rates for 165 currencies with converter and charts.
 - [CodePen sketches](https://codepen.io/marcus-nightingale): front-end experiments.
 
